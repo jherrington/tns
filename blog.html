@@ -1,0 +1,105 @@
+---
+layout: default
+---
+
+<section class="p-b-60" style="padding-top: 180px">
+  <div class="container text-center">
+    <div class="row">
+      <div class="col-sm-8 col-sm-offset-2">
+        <h6 class="block-title m-b-0">Discover</h6>
+        <h1 class="m-t-5 light">Something Different, Something New.</h1>
+        <p class="m-t-20">Our long standing vision has been to bypass the usual admin dashboard structure, and move forward with a more sophisticated yet simple framework that would create a credible impact on the many conventional dashboard users.
+        </p>
+        <img src="/assets/images/arrow_down.png" class="m-t-30" alt="">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="p-b-30bg-master-lighter">
+      <div class="container">
+        <div class="social-wrapper">
+          <!-- START SOCIAL -->
+          <div class="social " data-pages="social">
+            <div class="feed">
+              <!-- START DAY -->
+              <div class="day" data-social="day">
+
+                {% for post in site.posts %}
+
+                  {% if post.image == nil %}
+                <!-- START NO-IMAGE ITEM -->
+                <div class="card share  col1" data-social="item">
+                  <div class="circle" data-toggle="tooltip" title="Label" data-container="body">
+                  </div>
+                  <div class="card-header clearfix">
+                    <div class="user-pic">
+                      <img alt="Profile Image" width="33" height="33" data-src-retina="assets/images/profiles/6x.jpg" data-src="assets/images/profiles/6.jpg" src="assets/images/profiles/6x.jpg">
+                    </div>
+                    <h5>{{ post.author }}</h5>
+                    <h6>Shared a Tweet
+                                <span class="location semi-bold"><i class="fa fa-map-marker"></i> {{ post.preview }}</span>
+                            </h6>
+                  </div>
+                  <div class="card-description">
+                    <p>{{ post.excerpt }}</p>
+                    <div class="via">{{ post.categories }}</div>
+                    <a class="btn btn-primary" href="{{ post.url }}">Read</a>
+                  </div>
+                </div>
+                <!-- END NO-IMAGE ITEM -->
+
+                {% else %}
+
+                <!-- START ITEM -->
+                <div class="card share share-other col1" data-social="item">
+                  <div class="circle" data-toggle="tooltip" title="Label" data-container="body">
+                  </div>
+                  <div class="card-content">
+                    <ul class="buttons ">
+                      <li>
+                        <a href="#"><i class="fa fa-expand"></i>
+                                    </a>
+                      </li>
+                      <li>
+                        <a href="#"><i class="fa fa-heart-o"></i>
+                                    </a>
+                      </li>
+                    </ul>
+                    <img alt="Quote" src="{{ post.image }}" class="lazy">
+                  </div>
+                  <div class="card-description">
+                    <p><a href="{{ post.url }}">{{ post.title }}</a></p>
+                  </div>
+                  <div class="card-footer clearfix">
+                    <div class="time">{{ post.date }}</div>
+                    <ul class="reactions">
+                      <li><a href="#">5,345 <i class="fa fa-comment-o"></i></a>
+                      </li>
+                      <li><a href="#">23K <i class="fa fa-heart-o"></i></a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="card-header clearfix">
+                    <div class="user-pic">
+                      <img alt="Profile Image" width="33" height="33" src="assets/images/profiles/7x.jpg">
+                    </div>
+                    <h5>{{ post.author }}</h5>
+                    <h6>Shared a photo on your wall</h6>
+                  </div>
+                </div>
+                <!-- END ITEM -->
+
+                {% endif %}
+                {% endfor %}
+
+
+
+              </div>
+              <!-- END DAY -->
+            </div>
+            <!-- END FEED -->
+          </div>
+        </div>
+      </div>
+    </section>
