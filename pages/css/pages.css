@@ -216,7 +216,7 @@ body.pace-white .pace .pace-progress {
   background: #ffffff;
 }
 .header.dark {
-  background-color: rgba(0, 0, 0, 0.87);
+  background-color: #012857;
 }
 .header.dark .menu > li > a:not(.btn) {
   color: #ffffff;
